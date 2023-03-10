@@ -18,7 +18,7 @@ export class ListaRoutersComponent {
     description: '',
     driver_id: 0,
     vehicle_id: 0,
-    active: false
+    active: 0
   }
 
   constructor(private softService: SoftService, private router: Router){}
@@ -36,6 +36,25 @@ export class ListaRoutersComponent {
       },
       err => console.error(err)
     );
+  }
+
+  guardarRouter() {
+    this.softService.postRouters(this.routers)
+    .subscribe(
+      res=>{
+        this.getGames();
+      },
+      err => console.log(err)
+    );
+  }
+
+  eliminarRouter(id: string){
+    this.softService.deleteDrivers(id).subscribe(
+      res => {
+        this.getGames();
+      },
+      err => console.log(err)
+    )
   }
 
 }

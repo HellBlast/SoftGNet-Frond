@@ -1,4 +1,5 @@
 <app-navigate></app-navigate>
+<br>
 <div class="row">
     <div class="col-md-5">
 
@@ -6,42 +7,58 @@
             <form action="/add_contact" method="post">
 
                 <div class="form-group">
-                    <input type="text" name="last_name" [(ngModel)]="driver.last_name " placeholder="last_name" class="form-control">
+                    <h1>Creacion Drivers</h1>
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <input type="text" name="first_name" [(ngModel)]="driver.first_name" placeholder="first_name" class="form-control">
+                    <input type="text" name="last_name" [(ngModel)]="driver.last_name " placeholder="last_name" class="form-control" required>
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <input type="text" name="ssd" [(ngModel)]="driver.ssd" placeholder="Ssd" class="form-control">
+                    <input type="text" name="first_name" [(ngModel)]="driver.first_name" placeholder="first_name" class="form-control" required>
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <input type="date" name="bod" [(ngModel)]="driver.dob" placeholder="Bod" class="form-control">
+                    <input type="text" name="ssd" [(ngModel)]="driver.ssd" placeholder="Ssd" class="form-control" required>
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <input type="text" name="address" [(ngModel)]="driver.address" placeholder="Address" class="form-control">
+                    <input type="date" name="bod" [(ngModel)]="driver.dob" placeholder="Bod" class="form-control" required>
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <input type="text" name="city" [(ngModel)]="driver.city" placeholder="City" class="form-control">
+                    <input type="text" name="address" [(ngModel)]="driver.address" placeholder="Address" class="form-control" required>
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <input type="number" name="phone" [(ngModel)]="driver.phone" placeholder="Phone" class="form-control">
+                    <input type="text" name="city" [(ngModel)]="driver.city" placeholder="City" class="form-control" required>
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+                    <input type="text" name="zip" [(ngModel)]="driver.zip" placeholder="Zip" class="form-control" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" name="phone" [(ngModel)]="driver.phone" placeholder="Phone" class="form-control" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <select class="form-select form-select-lg mb-3" name="active" [(ngModel)]="driver.active"  aria-label=".form-select-lg example" required>
+                        <option selected>Selecione el estado</option>
+                        <option value="1">Activo</option>
+                        <option value="0">Innactivo</option>
+                      </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" (click)="guardarDrivers()">Save</button>
                 </div>
 
             </form>
         </div>
     </div>
 </div>
-
+<br>
 <div class="col-md-7">
     <table class="table table-striped table-bordered bg-white table-sm">
         <thead>
@@ -69,7 +86,7 @@
                 <td>{{driver.phone}}</td>
                 <td>
                     <a href="" class="btn btn-secondary">Edit</a>
-                    <a href="" class="btn btn-danger btn-delete">Delete</a>
+                    <button class="btn btn-danger btn-delete" (click)="eliminarDrivers(driver.id)">Delete</button>
                 </td>
             </tr>
         </tbody>

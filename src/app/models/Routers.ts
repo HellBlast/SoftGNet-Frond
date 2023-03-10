@@ -3,5 +3,5 @@ export interface Routers{
     description: string;
     driver_id : number;
     vehicle_id : number;
-    active: boolean;
+    active: number;
 }

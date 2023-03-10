@@ -4,5 +4,5 @@ export interface Schedules{
     week_num: number;
     from: Date;
     to: Date;
-    active: boolean;
+    active: number;
 }

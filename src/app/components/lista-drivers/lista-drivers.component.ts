@@ -23,7 +23,7 @@ export class ListaDriversComponent {
     city: '',
     zip: '',
     phone: 0,
-    active: false
+    active: 0
 
   }
 
@@ -42,6 +42,25 @@ export class ListaDriversComponent {
       },
       err => console.error(err)
     );
+  }
+
+  guardarDrivers() {
+    this.softService.postDrivers(this.driver)
+    .subscribe(
+      res=>{
+        this.getGames();
+      },
+      err => console.log(err)
+    );
+  }
+
+  eliminarDrivers(id: string){
+    this.softService.deleteDrivers(id).subscribe(
+      res => {
+        this.getGames();
+      },
+      err => console.log(err)
+    )
   }
 
 }

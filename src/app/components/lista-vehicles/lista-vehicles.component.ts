@@ -12,23 +12,23 @@ export class ListaVehiclesComponent {
 
   list: any;
   vehicle: any;
-  
-  vehicles: Vehicles={
+
+  vehicles: Vehicles = {
     id: 0,
     description: '',
     year: 0,
     make: 0,
     capacity: 0,
-    active: false
+    active: 0
   }
 
-  constructor(private softService: SoftService, private router: Router){}
+  constructor(private softService: SoftService, private router: Router) { }
 
   ngOnInit() {
     this.getGames();
   }
 
-  getGames(){
+  getGames() {
     this.softService.getVehicles().subscribe(
       resp => {
         this.list = resp;
@@ -38,4 +38,24 @@ export class ListaVehiclesComponent {
       err => console.error(err)
     );
   }
+
+  guardarVehicles() {
+    this.softService.postVehicles(this.vehicles)
+    .subscribe(
+      res=>{
+        this.getGames();
+      },
+      err => console.log(err)
+    );
+  }
+
+  eliminarvehicles(id: string){
+    this.softService.deleteVehicles(id).subscribe(
+      res => {
+        this.getGames();
+      },
+      err => console.log(err)
+    )
+  }
+
 }

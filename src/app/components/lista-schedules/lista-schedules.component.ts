@@ -18,7 +18,7 @@ export class ListaSchedulesComponent {
     week_num: 0,
     from: new Date(),
     to: new Date(),
-    active: false
+    active: 0
   }
 
   constructor(private softService: SoftService, private router: Router){}
@@ -36,5 +36,24 @@ export class ListaSchedulesComponent {
       },
       err => console.error(err)
     );
+  }
+
+  guardarSchedules() {
+    this.softService.postSchedules(this.schedules)
+    .subscribe(
+      res=>{
+        this.getGames();
+      },
+      err => console.log(err)
+    );
+  }
+
+  eliminarSchedules(id: string){
+    this.softService.deleteSchedules(id).subscribe(
+      res => {
+        this.getGames();
+      },
+      err => console.log(err)
+    )
   }
 }

@@ -1,35 +1,45 @@
 <app-navigate></app-navigate>
+<br>
 <div class="row">
     <div class="col-md-5">
-
         <div class="card card-body">
             <form action="/add_contact" method="post">
-
                 <div class="form-group">
-                    <input type="text" name="router_id" [(ngModel)]="schedules.router_id" placeholder="Description" class="form-control">
+                    <h1>Creacion Schedules</h1>
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <input type="text" name="week_num" [(ngModel)]="schedules.week_num" placeholder="Year" class="form-control">
+                    <input type="number" name="router_id" [(ngModel)]="schedules.router_id" placeholder="router_id" class="form-control">
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <input type="text" name="from" [(ngModel)]="schedules.from" placeholder="Make" class="form-control">
+                    <input type="number" name="week_num" [(ngModel)]="schedules.week_num" placeholder="Year" class="form-control">
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <input type="text" name="to" [(ngModel)]="schedules.to" placeholder="Capacity" class="form-control">
+                    <input type="date" name="from" [(ngModel)]="schedules.from" placeholder="Make" class="form-control">
                 </div>
-
+                <br>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+                    <input type="date" name="to" [(ngModel)]="schedules.to" placeholder="Capacity" class="form-control">
                 </div>
-
+                <br>
+                <div class="form-group">
+                    <select class="form-select form-select-lg mb-3" name="active" [(ngModel)]="schedules.active"  aria-label=".form-select-lg example">
+                        <option selected>Selecione el estado</option>
+                        <option value="1">Activo</option>
+                        <option value="0">Innactivo</option>
+                      </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" (click)="guardarSchedules()">Save</button>
+                </div>
             </form>
         </div>
     </div>
 </div>
-
+<br>
 <div class="col-md-7">
     <table class="table table-striped table-bordered bg-white table-sm">
         <thead>
@@ -51,7 +61,7 @@
                 <td>{{schedule.active}}</td>
                 <td>
                     <a href="" class="btn btn-secondary">Edit</a>
-                    <a href="" class="btn btn-danger btn-delete">Delete</a>
+                    <button class="btn btn-danger btn-delete" (click)="eliminarSchedules(schedule.id)">Delete</button>
                 </td>
             </tr>
         </tbody>

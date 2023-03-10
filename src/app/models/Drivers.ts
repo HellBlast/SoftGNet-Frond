@@ -8,5 +8,5 @@ export interface Drivers{
     city: string;
     zip: string;
     phone: number;
-    active: boolean;
+    active: number;
 }
