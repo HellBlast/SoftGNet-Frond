@@ -1,0 +1,40 @@
+<app-navigate></app-navigate>
+<form action="" method="post">
+
+    <div class="form-group">
+        <h1>Creacion Vehicles</h1>
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="text" name="description" [(ngModel)]="vehicles.description" placeholder="Description"
+            class="form-control">
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="number" name="year" [(ngModel)]="vehicles.year" placeholder="Year" class="form-control">
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="number" name="make" [(ngModel)]="vehicles.make" placeholder="Make" class="form-control">
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="number" name="capacity" [(ngModel)]="vehicles.capacity" placeholder="Capacity"
+            class="form-control">
+    </div>
+    <br>
+    <div class="form-group">
+        <select class="form-select form-select-lg mb-3" name="active" [(ngModel)]="vehicles.active"
+            aria-label=".form-select-lg example">
+            <option selected>Selecione el estado</option>
+            <option value="1">Activo</option>
+            <option value="0">Innactivo</option>
+        </select>
+    </div>
+
+    <br>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Save</button>
+    </div>
+
+</form>

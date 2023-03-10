@@ -49,7 +49,7 @@ export class ListaRoutersComponent {
   }
 
   eliminarRouter(id: string){
-    this.softService.deleteDrivers(id).subscribe(
+    this.softService.deleteRouters(id).subscribe(
       res => {
         this.getGames();
       },

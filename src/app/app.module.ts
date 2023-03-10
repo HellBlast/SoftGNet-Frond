@@ -13,6 +13,9 @@ import { ListaSchedulesComponent } from './components/lista-schedules/lista-sche
 import { ListaDriversComponent } from './components/lista-drivers/lista-drivers.component';
 import { ListaRoutersComponent } from './components/lista-routers/lista-routers.component';
 import { NavigateComponent } from './components/navigate/navigate.component';
+import { EditarVehiclesComponent } from './components/editar-vehicles/editar-vehicles.component';
+import { EditarRoutersComponent } from './components/editar-routers/editar-routers.component';
+import { EditarDriversComponent } from './components/editar-drivers/editar-drivers.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { NavigateComponent } from './components/navigate/navigate.component';
     ListaSchedulesComponent,
     ListaDriversComponent,
     ListaRoutersComponent,
-    NavigateComponent
+    NavigateComponent,
+    EditarVehiclesComponent,
+    EditarRoutersComponent,
+    EditarDriversComponent
   ],
   imports: [
     BrowserModule,

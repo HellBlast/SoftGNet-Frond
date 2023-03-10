@@ -27,6 +27,10 @@ export class SoftService {
     return this.http.get(`${this.API_URL}/vehicles`);
   }
 
+  getVehicle(id: string){
+    return this.http.get(`${this.API_URL}/vehicles/${id}`);
+  }
+
   postVehicles(vehicle: Vehicles){
     return this.http.post(`${this.API_URL}/vehicles`, vehicle);
   }

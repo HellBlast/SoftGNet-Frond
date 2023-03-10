@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditarVehiclesComponent } from './components/editar-vehicles/editar-vehicles.component';
 import { ListaDriversComponent } from './components/lista-drivers/lista-drivers.component';
 import { ListaRoutersComponent } from './components/lista-routers/lista-routers.component';
 import { ListaSchedulesComponent } from './components/lista-schedules/lista-schedules.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'registrar', component:RegistrarComponent},
   {path:'list-vehicle', component:ListaVehiclesComponent},
+  {path:'actualizar-vehicle/:id', component:EditarVehiclesComponent},
   {path:'list-routers', component:ListaRoutersComponent},
   {path:'list-drivers', component:ListaDriversComponent},
   {path:'list-schedules', component:ListaSchedulesComponent}

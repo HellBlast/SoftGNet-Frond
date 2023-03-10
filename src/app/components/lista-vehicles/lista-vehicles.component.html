@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-5">
         <div class="card card-body">
-            <form action="/add_contact" method="post">
+            <form action="" method="post">
 
                 <div class="form-group">
                     <h1>Creacion Vehicles</h1>
@@ -63,7 +63,7 @@
                 <td>{{vehicle.capacity}}</td>
                 <td>{{vehicle.active}}</td>
                 <td>
-                    <a href="" class="btn btn-secondary">Edit</a>
+                    <a class="btn btn-secondary" [routerLink]="['/actualizar-vehicle', vehicle.id]">Edit</a>
                     <button class="btn btn-danger btn-delete" (click)="eliminarvehicles(vehicle.id)">Delete</button>
                 </td>
             </tr>
