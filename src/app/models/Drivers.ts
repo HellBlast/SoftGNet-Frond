@@ -1,6 +1,12 @@
 export interface Drivers{
     id?: number;
-    driver_id : string ;
-    vehicle_id : string;
-    active: string
+    last_name : string ;
+    first_name : string;
+    ssd: string;
+    dob: Date;
+    address: string;
+    city: string;
+    zip: string;
+    phone: number;
+    active: boolean;
 }

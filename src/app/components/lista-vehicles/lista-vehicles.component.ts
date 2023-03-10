@@ -10,8 +10,6 @@ import { SoftService } from 'src/app/services/soft.service';
 })
 export class ListaVehiclesComponent {
 
-  @HostBinding ('class') classes = 'row';
-
   list: any;
   vehicle: any;
   
@@ -21,7 +19,7 @@ export class ListaVehiclesComponent {
     year: 0,
     make: 0,
     capacity: 0,
-    active: 'false'
+    active: false
   }
 
   constructor(private softService: SoftService, private router: Router){}

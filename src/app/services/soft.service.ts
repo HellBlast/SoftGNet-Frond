@@ -27,4 +27,12 @@ export class SoftService {
     return this.http.get(`${this.API_URL}/drivers`);
   }
 
+  getRouters(){
+    return this.http.get(`${this.API_URL}/router`);
+  }
+
+  getSchedules(){
+    return this.http.get(`${this.API_URL}/schedules`);
+  }
+
 }

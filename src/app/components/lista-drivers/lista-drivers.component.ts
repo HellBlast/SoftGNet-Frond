@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Drivers } from 'src/app/models/Drivers';
 import { SoftService } from 'src/app/services/soft.service';
 
 @Component({
@@ -11,6 +12,20 @@ export class ListaDriversComponent {
 
   list: any;
   drivers: any;
+
+  driver: Drivers={
+    id: 0,
+    last_name: '',
+    first_name: '',
+    ssd: '',
+    dob: new Date(),
+    address: '',
+    city: '',
+    zip: '',
+    phone: 0,
+    active: false
+
+  }
 
   constructor(private softService: SoftService, private router: Router){}
 

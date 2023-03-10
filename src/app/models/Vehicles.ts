@@ -4,5 +4,5 @@ export interface Vehicles{
     year: number;
     make: number;
     capacity: number;
-    active: string;
+    active: boolean;
 }
