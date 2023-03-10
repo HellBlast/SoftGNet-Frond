@@ -15,4 +15,16 @@ export class SoftService {
     return this.http.post(`${this.API_URL}/usuario`,usuario);
   }
 
+  validaUsuario(usuario: Usuario){
+    return this.http.get(`${this.API_URL}/usuario`);
+  }
+
+  getVehicles(){
+    return this.http.get(`${this.API_URL}/vehicles`);
+  }
+
+  getDrivers(){
+    return this.http.get(`${this.API_URL}/drivers`);
+  }
+
 }

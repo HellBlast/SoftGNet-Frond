@@ -18,11 +18,12 @@ export class LoginComponent {
   }
 
   constructor(private softService: SoftService, private router: Router, private activedRoute: ActivatedRoute){}
-  saveNewUsuario(){
+  
+  ValidarUsuario(){
     this.softService.saveRegistro(this.usuario)
     .subscribe(
       res=>{
-        this.router.navigate(['/login'])
+        this.router.navigate(['/list-vehicle'])
       },
       err => alert('Usuario Erroneo')
     )
