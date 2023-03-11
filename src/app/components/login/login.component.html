@@ -9,11 +9,11 @@
                 <div class="card-body">
                     <form action="/validar/" method="post">
                         <div class="form-group">
-                            <input type="text" name="usuario" placeholder="usuario" class="form-control" autofocus required>
+                            <input type="text" name="alias" [(ngModel)]="usuario.alias" placeholder="usuario" class="form-control" autofocus required>
                         </div>
                         <br>
                         <div class="form-group">
-                            <input type="password" name="pass" placeholder="pass" class="form-control" required>
+                            <input type="password" name="pass" [(ngModel)]="usuario.contrasena" placeholder="pass" class="form-control" required>
                         </div>
                         <br>
                         <button type="submit" class="btn btn-success btn-block col-md-12" (click)="ValidarUsuario()">Iniciar</button>

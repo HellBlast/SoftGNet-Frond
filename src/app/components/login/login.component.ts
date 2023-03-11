@@ -10,6 +10,8 @@ import { SoftService } from 'src/app/services/soft.service';
 })
 export class LoginComponent {
 
+  dato: any;
+
   usuario: Usuario={
     id: 0,
     nombre: '',
@@ -20,13 +22,15 @@ export class LoginComponent {
   constructor(private softService: SoftService, private router: Router, private activedRoute: ActivatedRoute){}
   
   ValidarUsuario(){
-    this.softService.saveRegistro(this.usuario)
-    .subscribe(
-      res=>{
-        this.router.navigate(['/list-vehicle'])
+    this.softService.validarUsuario(this.usuario.alias).subscribe(
+      resp => {
+        this.dato = resp;
+        if(this.usuario.contrasena==this.dato.contraseña){
+          this.router.navigate(['/list-vehicle']);
+        }
       },
-      err => alert('Usuario Erroneo')
-    )
+      err => console.error(err)
+    );
   }
 
 }
