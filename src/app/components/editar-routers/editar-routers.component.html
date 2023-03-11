@@ -1,1 +1,46 @@
-<p>editar-routers works!</p>
+<app-navigate></app-navigate>
+<br>
+<div class="row">
+    <div class="col-md-5">
+
+        <div class="card card-body">
+            <form action="/add_contact" method="post">
+                <div class="form-group">
+                    <h1>Creacion Routers</h1>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" name="id" [(ngModel)]="routers.id" placeholder="id"
+                        class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" name="description" [(ngModel)]="routers.description" placeholder="Description"
+                        class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" name="driver_id" [(ngModel)]="routers.driver_id" placeholder="driver_id"
+                        class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" name="vehicle_id" [(ngModel)]="routers.vehicle_id " placeholder="vehicle_id"
+                        class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <select class="form-select form-select-lg mb-3" name="active" [(ngModel)]="routers.active"  aria-label=".form-select-lg example" required>
+                        <option selected>Selecione el estado</option>
+                        <option value="1">Activo</option>
+                        <option value="0">Innactivo</option>
+                      </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" (click)="ActualizarRouters()">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

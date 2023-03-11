@@ -35,6 +35,10 @@ export class SoftService {
     return this.http.post(`${this.API_URL}/vehicles`, vehicle);
   }
 
+  updateVehicles(id: string, vehicle: Vehicles){
+    return this.http.put(`${this.API_URL}/vehicles/${id}`, vehicle);
+  }
+
   deleteVehicles(id: string){
     return this.http.delete(`${this.API_URL}/vehicles/${id}`);
   }
@@ -43,8 +47,16 @@ export class SoftService {
     return this.http.get(`${this.API_URL}/drivers`);
   }
 
+  getDriver(id: string){
+    return this.http.get(`${this.API_URL}/drivers/${id}`);
+  }
+
   postDrivers(drivers: Drivers){
     return this.http.post(`${this.API_URL}/drivers`, drivers);
+  }
+
+  updateDrivers(id: string, drivers: Drivers){
+    return this.http.put(`${this.API_URL}/drivers/${id}`, drivers);
   }
 
   deleteDrivers(id: string){
@@ -55,8 +67,16 @@ export class SoftService {
     return this.http.get(`${this.API_URL}/router`);
   }
 
+  getRouter(id: string){
+    return this.http.get(`${this.API_URL}/router/${id}`);
+  }
+
   postRouters(routers: Routers){
     return this.http.post(`${this.API_URL}/router`, routers);
+  }
+
+  updateRouters(id: string, routers: Routers){
+    return this.http.put(`${this.API_URL}/router/${id}`, routers);
   }
 
   deleteRouters(id: string){

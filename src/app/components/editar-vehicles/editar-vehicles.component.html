@@ -6,6 +6,11 @@
     </div>
     <br>
     <div class="form-group">
+        <input type="number" name="id" [(ngModel)]="vehicles.id" placeholder="id"
+            class="form-control">
+    </div>
+    <br>
+    <div class="form-group">
         <input type="text" name="description" [(ngModel)]="vehicles.description" placeholder="Description"
             class="form-control">
     </div>
@@ -34,7 +39,7 @@
 
     <br>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Save</button>
+        <button type="submit" class="btn btn-primary btn-block" (click)="ActualizarVehicles()">Save</button>
     </div>
 
 </form>

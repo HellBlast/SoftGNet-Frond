@@ -6,7 +6,7 @@
         <div class="card card-body">
             <form action="/add_contact" method="post">
                 <div class="form-group">
-                    <h1>Creacion Drivers</h1>
+                    <h1>Creacion Routers</h1>
                 </div>
                 <br>
                 <div class="form-group">
@@ -58,7 +58,7 @@
                 <td>{{route.vehicle_id}}</td>
                 <td>{{route.active}}</td>
                 <td>
-                    <a href="" class="btn btn-secondary">Edit</a>
+                    <a class="btn btn-secondary" [routerLink]="['/actualizar-router', route.id]">Edit</a>
                     <button class="btn btn-danger btn-delete" (click)="eliminarRouter(route.id)">Delete</button>
                 </td>
             </tr>

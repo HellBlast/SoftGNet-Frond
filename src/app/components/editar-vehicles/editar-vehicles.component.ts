@@ -37,6 +37,21 @@ export class EditarVehiclesComponent {
     );
 
   }
+
+  ActualizarVehicles(){
+
+    let id = ''+this.vehicles.id;
+
+    this.softService.updateVehicles(id, this.vehicles)
+    .subscribe(
+      res => {
+        console.log(res);
+        this.router.navigate(['/list-vehicle'])
+
+      },
+      err => console.log(err)
+    )
+  }
 }
 
 
